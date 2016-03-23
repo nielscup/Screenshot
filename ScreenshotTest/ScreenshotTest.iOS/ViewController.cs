@@ -9,15 +9,12 @@ namespace ScreenshotTest.iOS
 {
     public partial class ViewController : UIViewController
     {
-        UIButton _takeScreenshotButton;
-        UIButton _shareScreenshotButton;
-        UIImageView _screenshotImage;
-        string _screenshotPath;
+        UIButton takeScreenshotButton;
+        UIButton shareScreenshotButton;
+        UIImageView screenshotImage;
+        string screenshotPath;
 
-        public ViewController(IntPtr handle)
-            : base(handle)
-        {
-        }
+        public ViewController(IntPtr handle) : base(handle) { }
 
         public override void ViewDidLoad()
         {
@@ -26,14 +23,14 @@ namespace ScreenshotTest.iOS
 
             SetBackground();
 
-            _takeScreenshotButton = AddButton("Take Screenshot");
-            _takeScreenshotButton.TouchUpInside += _takeScreenshotButton_TouchUpInside;
+            takeScreenshotButton = AddButton("Take Screenshot");
+            takeScreenshotButton.TouchUpInside += _takeScreenshotButton_TouchUpInside;
 
-            _screenshotImage = AddImage(400, 400);
+            screenshotImage = AddImage(400, 400);
 
-            _shareScreenshotButton = AddButton("Share screenshot");
-            _shareScreenshotButton.Hidden = true;
-            _shareScreenshotButton.TouchUpInside += _shareScreenshotButton_TouchUpInside;
+            shareScreenshotButton = AddButton("Share screenshot");
+            shareScreenshotButton.Hidden = true;
+            shareScreenshotButton.TouchUpInside += _shareScreenshotButton_TouchUpInside;
         }
 
         void _takeScreenshotButton_TouchUpInside(object sender, EventArgs e)
@@ -43,21 +40,21 @@ namespace ScreenshotTest.iOS
 
         void _shareScreenshotButton_TouchUpInside(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(_screenshotPath))
+            if (string.IsNullOrWhiteSpace(screenshotPath))
                 return;
 
-            CrossShareFile.Current.ShareLocalFile(_screenshotPath);
+            CrossShareFile.Current.ShareLocalFile(screenshotPath);
         }
 
         void TakeScreenshot()
         {
             var documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            _screenshotPath = System.IO.Path.Combine(documentsDirectory, "screenshot.jpg");
+            screenshotPath = System.IO.Path.Combine(documentsDirectory, "screenshot.jpg");
 
-            if (CrossScreenshot.Current.TakeScreenshot(_screenshotPath, null))
+            if (CrossScreenshot.Current.TakeScreenshot(screenshotPath, null))
             {
-                _screenshotImage.Image = new UIImage(_screenshotPath);
-                _shareScreenshotButton.Hidden = false;
+                screenshotImage.Image = new UIImage(screenshotPath);
+                shareScreenshotButton.Hidden = false;
             }
         }
 

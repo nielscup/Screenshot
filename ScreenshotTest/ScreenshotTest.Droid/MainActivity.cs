@@ -26,14 +26,20 @@ namespace ScreenshotTest.Droid
 
             button.Click += delegate 
             {
-                var screenshotPath = Android.OS.Environment.ExternalStorageDirectory.ToString() + "/screenshot.jpg";
-                CrossScreenshot.Current.TakeScreenshot(screenshotPath, this);
+                TakeScreenshot();
+            }; 
+        }
 
+        void TakeScreenshot()
+        {
+            var screenshotPath = Android.OS.Environment.ExternalStorageDirectory.ToString() + "/screenshot.jpg";
+
+            if (CrossScreenshot.Current.TakeScreenshot(screenshotPath, this))
+            {
                 var screenshotUri = Android.Net.Uri.FromFile(new Java.IO.File(screenshotPath));
                 screenshotImage.SetImageURI(null);
                 screenshotImage.SetImageURI(screenshotUri);
-            };   
-            
+            }
         }
     }
 }

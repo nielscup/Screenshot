@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenshotTest.Droid", "Scr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenshotTest.iOS", "ScreenshotTest\ScreenshotTest.iOS\ScreenshotTest.iOS.csproj", "{458AA78A-8A3F-4B57-A4FD-B9BAB3FA0D15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90AC124D-E989-422A-8098-938BC36162D7}"
+	ProjectSection(SolutionItems) = preProject
+		Plugin.Screenshot.nuspec = Plugin.Screenshot.nuspec
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

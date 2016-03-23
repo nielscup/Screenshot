@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>Plugin.Screenshot</id>
+    <version>0.0.1</version>
+    <title>Screenshot Plugin</title>
+    <authors>Niels Cup</authors>
+    <owners>Niels Cup</owners>
+    <licenseUrl>https://github.com/nielscup/Screenshot/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/nielscup/Screenshot</projectUrl>
+    <!--Default Icon, a template can be found:  https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon.png-->
+    <iconUrl>https://cupitcontent.blob.core.windows.net/images/cup-it.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Crop images with iOS and Android
+    </description>
+    <summary>Screenshot Plugin for Xamarin iOS and Android.</summary>
+    <tags>xamarin, pcl, xam.pcl, plugin, plugin for xamarin, android, ios</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+
+    <!--Core-->
+    <file src="Screenshot/Plugin.Screenshot/bin/Release/Plugin.Screenshot.dll" target="lib\portable-net45+win+wpa81+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\Plugin.Screenshot.dll" />
+    <file src="Screenshot/Plugin.Screenshot/bin/Release/Plugin.Screenshot.Abstractions.dll" target="lib\portable-net45+win+wpa81+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\Plugin.Screenshot.Abstractions.dll" />
+                                                                                        
+    <!--Xamarin.Android-->
+    <file src="Screenshot/Plugin.Screenshot.Android/bin/Release/Plugin.Screenshot.Abstractions.dll" target="lib\MonoAndroid10\Plugin.Screenshot.Abstractions.dll" />
+    <file src="Screenshot/Plugin.Screenshot.Android/bin/Release/Plugin.Screenshot.dll" target="lib\MonoAndroid10\Plugin.Screenshot.dll" />
+    
+    <!--Xamarin.iOS-->
+    <file src="Screenshot/Plugin.Screenshot.iOSUnified/bin/iPhone/Release/Plugin.Screenshot.Abstractions.dll" target="lib\Xamarin.iOS10\Plugin.Screenshot.Abstractions.dll" />
+    <file src="Screenshot/Plugin.Screenshot.iOSUnified/bin/iPhone/Release/Plugin.Screenshot.dll" target="lib\Xamarin.iOS10\Plugin.Screenshot.dll"/>   
+  </files>
+</package>
