@@ -1,6 +1,6 @@
 # Screenshot Plugin for Xamarin
 
-Simple way to crop an image in Xamarin.iOS and Xamarin.Android
+Simple way to take a screenshot in Xamarin.iOS and Xamarin.Android
 
 #### Setup
 * Coming soon to NuGet
