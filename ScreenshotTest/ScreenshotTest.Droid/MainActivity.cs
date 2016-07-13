@@ -9,16 +9,19 @@ using Plugin.Screenshot;
 
 namespace ScreenshotTest.Droid
 {
-    [Activity(Label = "ScreenshotTest.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+    //[Activity(Label = "ScreenshotTest.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "ScreenshotTest.Droid", Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         ImageView screenshotImage;
         protected override void OnCreate(Bundle bundle)
         {
+            Window.AddFlags(Android.Views.WindowManagerFlags.Secure);
+
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);            
 
             // Get our button from the layout resource,
             Button button = FindViewById<Button>(Resource.Id.MyButton);
